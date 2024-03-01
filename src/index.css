@@ -1,0 +1,124 @@
+@media screen and (max-width: 500px) {
+  .game__field {
+    display: flex!important;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  body {
+    overflow-y: scroll!important;
+  }
+
+  .game__history {
+    margin-bottom: 30px;
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  background-color: #242424;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #8dbae1;
+}
+
+.victory-square {
+  opacity: 0.5;
+  transition: ease-in-out .4s;
+}
+
+.game__history {
+  grid-area: history;
+  min-width: 300px;
+  min-height: 300px;
+  padding-top: 10px;
+  overflow-y: auto;
+  max-height: 380px;
+}
+
+ul {
+  list-style: none;
+  padding-right: 5px;
+}
+
+ul li {
+  padding-bottom: 5px;
+  font-size: 30px;
+}
+
+ul li button {
+  width: 100%;
+  padding: 7px 0;
+  font-variant: small-caps;
+}
+
+.game__field {
+  display: grid;
+  grid-template-areas:
+    "status history"
+    "board history";
+  column-gap: 30px;
+  font-size: 40px;
+}
+
+.game__status {
+  grid-area: status;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-variant: small-caps;
+}
+
+.game__board {
+  grid-area: board;
+  min-width: 300px;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+}
